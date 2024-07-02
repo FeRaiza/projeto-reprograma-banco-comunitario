@@ -1,0 +1,20 @@
+{
+  "name": "projeto-reprograma-banco-comunitario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FeRaiza/projeto-reprograma-banco-comunitario.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FeRaiza/projeto-reprograma-banco-comunitario/issues"
+  },
+  "homepage": "https://github.com/FeRaiza/projeto-reprograma-banco-comunitario#readme"
+}
