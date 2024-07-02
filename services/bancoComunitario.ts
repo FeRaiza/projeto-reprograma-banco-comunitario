@@ -2,6 +2,7 @@ import { Clientes } from './../interfaces/Cliente';
 import { Conta } from "../classes/conta";
 import { ContaCorrente } from "../classes/contaCorrente";
 import { ContaPoupanca } from "../classes/contaPoupanca"
+import { Gerente } from '../classes/Gerente';
 
 
 export class Banco {
@@ -13,9 +14,10 @@ export class Banco {
         id: string,
         endereco: string,
         telefone: string,
-        rendaSalarial: number
+        rendaSalarial: number,
+        gerente: Gerente
     ): Clientes {
-        const cliente = new Clientes(nome, id, endereco, telefone, rendaSalarial);
+        const cliente = new Clientes(nome, id, endereco, telefone, rendaSalarial, gerente);
         this.clientes.push(cliente);
         return cliente;
     }
@@ -41,10 +43,11 @@ export class Banco {
 }
 
 
+
 const banco = new Banco();
-const cliente1 = banco.criarCliente('Fernanda Raiza', '1', 'Rua Aliados', '1111-2222', 1000);
+const cliente1 = banco.criarCliente('Fernanda Raiza', '1', 'Rua Aliados', '1111-2222', 1000, new Gerente('Paulo da Silva'));
 const contaCorrente1 = banco.criarContaCorrente('001', cliente1);
-const cliente2 = banco.criarCliente('Maria José', '2', 'Rua da Banana', '4002-8422', 1500);
+const cliente2 = banco.criarCliente('Maria José', '2', 'Rua da Banana', '4002-8422', 1500, new Gerente('Francisca Mota'));
 const contaPoupanca1 = banco.criarContaPoupanca('002', cliente2);
 
 if (contaCorrente1) {
@@ -62,3 +65,4 @@ console.log(banco.buscarConta('001')); // Conta Corrente de Fernanda
 console.log(banco.buscarConta('002')); // Conta Poupança de Maria
 console.log(contaCorrente1.getSaldo());
 console.log(contaPoupanca1.getSaldo());
+
